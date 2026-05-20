@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="w.css">
+</head>
+<body>
+<div class="container">
+    <div class="nav-bar">
+        <div class="nav-logo"><span class="logo-bg">WK</span></div>
+        <a href="home.html" class="nav-link"><i class="fas fa-home"></i> About Me</a>
+        <a href="skill.html" class="nav-link"><i class="fas fa-cogs"></i> My Skills</a>
+        <a href="project.html" class="nav-link"><i class="fas fa-code-branch"></i> My Projects</a>
+        <a href="contact.html" class="nav-link"><i class="fas fa-address-card"></i> Contact</a>
+    </div>
+
+    <main>
+        <h2 class="section-title"><i class="fas fa-edit"></i> Student Registration Form</h2>
+
+        <div class="project-card" style="max-width:640px;">
+            <form id="regForm" novalidate>
+                <div style="display:flex;flex-direction:column;gap:0.8rem;">
+                    <label>Full name
+                        <input type="text" name="fullname" id="fullname" required placeholder="Your full name">
+                    </label>
+                    <label>Email
+                        <input type="email" name="email" id="email" required placeholder="you@example.com">
+                    </label>
+                    <label>Student ID
+                        <input type="text" name="studentId" id="studentId" placeholder="e.g. 2025-001">
+                    </label>
+                    <label>Department
+                        <select name="department" id="department">
+                            <option value="">Select department</option>
+                            <option>Computer Science</option>
+                            <option>Information Technology</option>
+                            <option>Engineering</option>
+                        </select>
+                    </label>
+                    <label>Password
+                        <input type="password" name="password" id="password" required placeholder="Choose a password">
+                    </label>
+                    <label>Confirm Password
+                        <input type="password" name="confirm" id="confirm" required placeholder="Repeat password">
+                    </label>
+                    <div style="display:flex;gap:0.6rem;align-items:center;margin-top:0.6rem;">
+                        <button type="submit" class="social-btn">Register</button>
+                        <a href="project.html" class="nav-link" style="margin-left:0.6rem;">Back to Projects</a>
+                    </div>
+                    <div id="regMessage" aria-live="polite" style="margin-top:0.8rem;color:var(--muted-2);"></div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Wondwosen Kebede
+    </footer>
+</div>
+
+<script>
+document.getElementById('regForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pw = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm').value;
+    const msg = document.getElementById('regMessage');
+    if(!name || !email || !pw || !confirm){
+        msg.textContent = 'Please fill the required fields.';
+        return;
+    }
+    if(pw !== confirm){
+        msg.textContent = 'Passwords do not match.';
+        return;
+    }
+    msg.textContent = 'Registration successful ';
+    this.reset();
+});
+</script>
+</body>
+</html>

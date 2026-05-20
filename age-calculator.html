@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="w.css">
+</head>
+<body>
+<div class="container">
+    <div class="nav-bar">
+        <div class="nav-logo"><span class="logo-bg">WK</span></div>
+        <a href="home.html" class="nav-link"><i class="fas fa-home"></i> About Me</a>
+        <a href="skill.html" class="nav-link"><i class="fas fa-cogs"></i> My Skills</a>
+        <a href="project.html" class="nav-link"><i class="fas fa-code-branch"></i> My Projects</a>
+        <a href="contact.html" class="nav-link"><i class="fas fa-address-card"></i> Contact</a>
+    </div>
+
+    <main>
+        <h2 class="section-title">Simple Age Calculator</h2>
+        <div class="age-calculator" aria-label="Simple age calculator">
+            <p>Pick your birth date and click <strong>Calculate</strong> to see your age.</p>
+            <div class="age-controls">
+                <label for="birthdate-page" class="visually-hidden">Birth date</label>
+                <input type="date" id="birthdate-page" class="age-input" aria-label="Birth date">
+                <button type="button" class="social-btn age-btn">Calculate</button>
+            </div>
+            <div class="age-result" aria-live="polite"></div>
+        </div>
+
+        <p style="margin-top:1.2rem;"><a href="project.html" class="nav-link">← Back to Projects</a></p>
+    </main>
+
+    <footer>
+        © 2025 Wondwosen Kebede — 2nd year IT @ WSU | beginner web developer 🌱
+    </footer>
+</div>
+<script src="age-calculator.js"></script>
+</body>
+</html>
